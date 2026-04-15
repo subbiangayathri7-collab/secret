@@ -1,0 +1,29 @@
+name: Secret Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use API Key
+        env:
+          API_KEY: ${{secrets.API_KEY}}
+        run: 'echo "API key is ${API_KEY}"'
+
+      - name: Authenticate API key
+        env:
+          API_KRY: ${{secrets.API_KEY}}
+        run: 'echo "AUthenticating ${API_KEY}"'
+
+      - name: Database Password
+        env:
+          DB_Password: ${{secrets.DB_PASSWORD}}
+        run: 'echo "Database Password is ${DB_PASSWORD"\}"'
