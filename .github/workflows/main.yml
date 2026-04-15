@@ -26,4 +26,4 @@ jobs:
       - name: Database Password
         env:
           DB_Password: ${{secrets.DB_PASSWORD}}
-        run: 'echo "Database Password is ${DB_PASSWORD"}"'
+        run: 'echo "Database Password is ${DB_PASSWORD}"'
